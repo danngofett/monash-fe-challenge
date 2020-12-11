@@ -1,0 +1,264 @@
+{
+  "data": {
+    "disclaimer": "Monash Front-end Development Challenge",
+    "intro": {
+      "heading": "Personalised Travel",
+      "body": "Private tours to North Korea are ideal for individuals, friends, families, and colleagues who wish to experience North Korea in a closed, private setting. We are the North Korea private tour specialists! Choose from one of our recommended Signature Series itineraries or design your own with us. We can arrange visits to all 9 provinces in the DPRK, covering all corners of the country. There is much more to see and do than you may expect. Dates of travel are flexible but will be subject to the Air Koryo flight schedule and/or the China-DPRK train schedule.\nIf you are interested in speaking with us about a private tour, please contact us."
+    },
+    "main": {
+      "heading": "North Korea Private Tours",
+      "body": "Our private tour packages are all-inclusive of return transport (either train or flight) to North Korea, premium accommodations, all meals, entry fees, two local English-speaking North Korean guides, modern air-conditioned land transport, and driver.\nOur packages include the best available accommodations in each region. We are the only operator providing upgraded 4 and 5-star accommodation options at standard tour rates. A tour to North Korea is certain to be packed with activities and the importance of a comfortable night’s rest, reliable facilities, and amenities cannot be overstated.\nLocal North Korean guides can be arranged that speak the following languages fluently: English, Chinese, German, Russian, Spanish, French, Italian, and Thai.\nPrices below are per person in Euros (EUR) based on twin/double occupancy. If you wish to have your own room (excluding 1 person rate), there is a single supplement of €40 per night."
+    },
+    "tours": {
+      "heading": "Tours",
+      "items": [
+        {
+          "id": "uri-beijing-111220",
+          "name": "Beijing",
+          "body": "Beijing is the primary hub facilitating travel to North Korea, offering transport to Pyongyang by either train or by flight.\n The below base pricing includes round-trip transport between Beijing and Pyongyang by train. You can upgrade to flight either one-way or return, and business class is available.",
+          "additional": [
+            "Upgrade to one-way flight between Beijing and Pyongyang (either way  €195",
+            "Upgrade to return flights between Beijing and Pyongyang: €295",
+            "North Korean visa service: €60. We don’t need your physical passport for this process."
+          ],
+          "price_lists": [
+            {
+              "size": "1",
+              "prices": [
+                {
+                  "night": 2,
+                  "price": 895.00
+                },
+                {
+                  "night": 3,
+                  "price": 1170.00
+                },
+                {
+                  "night": 4,
+                  "price": 1420.00
+                },
+                {
+                  "night": 5,
+                  "price": 1665.00
+                },
+                {
+                  "night": 6,
+                  "price": 1895.00
+                },
+                {
+                  "night": 7,
+                  "price": 2150.00
+                },
+                {
+                  "night": 8,
+                  "price": 2395.00
+                },
+                {
+                  "night": 9,
+                  "price": 2645.00
+                }
+              ]
+            },
+            {
+              "size": "2-5",
+              "prices": [
+                {
+                  "night": 2,
+                  "price": 795.00
+                },
+                {
+                  "night": 3,
+                  "price": 1040.00
+                },
+                {
+                  "night": 4,
+                  "price": 1225.00
+                },
+                {
+                  "night": 5,
+                  "price": 1425.00
+                },
+                {
+                  "night": 6,
+                  "price": 1645.00
+                },
+                {
+                  "night": 7,
+                  "price": 1850.00
+                },
+                {
+                  "night": 8,
+                  "price": 2080.00
+                },
+                {
+                  "night": 9,
+                  "price": 2285.00
+                }
+              ]
+            },
+            {
+              "size": "6-9",
+              "prices": [
+                {
+                  "night": 2,
+                  "price": 695.00
+                },
+                {
+                  "night": 3,
+                  "price": 865.00
+                },
+                {
+                  "night": 4,
+                  "price": 1035.00
+                },
+                {
+                  "night": 5,
+                  "price": 1190.00
+                },
+                {
+                  "night": 6,
+                  "price": 1345.00
+                },
+                {
+                  "night": 7,
+                  "price": 1520.00
+                },
+                {
+                  "night": 8,
+                  "price": 1715.00
+                },
+                {
+                  "night": 9,
+                  "price": 1895.00
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uri-shanghai-111220",
+          "name": "Shanghai",
+          "body": "Visiting North Korea from Shanghai is the best value option! Enjoy an entire extra full day of activities compared to a tour from Beijing of the same length. See below for an example",
+          "additional": [
+            "North Korean visa service: €70. We don’t need your physical passport for this process.",
+            "To see why visiting North Korea from Shanghai could be perfect for you, read our blog post!"
+          ],
+          "price_lists": [
+            {
+              "size": "1",
+              "prices": [
+                {
+                  "night": 2.5,
+                  "price": 1395.00
+                },
+                {
+                  "night": 3.5,
+                  "price": 1645.00
+                },
+                {
+                  "night": 6.5,
+                  "price": 2395.00
+                }
+              ]
+            },
+            {
+              "size": "2-5",
+              "prices": [
+                {
+                  "night": 2.5,
+                  "price": 1240.00
+                },
+                {
+                  "night": 3.5,
+                  "price": 1430.00
+                },
+                {
+                  "night": 6.5,
+                  "price": 2095.00
+                }
+              ]
+            },
+            {
+              "size": "6-9",
+              "prices": [
+                {
+                  "night": 2.5,
+                  "price": 1095.00
+                },
+                {
+                  "night": 3.5,
+                  "price": 1265.00
+                },
+                {
+                  "night": 6.5,
+                  "price": 1795.00
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uri-shenyang-111220",
+          "name": "Shenyang",
+          "body": "Shenyang is the largest city in northeast China, and it’s international airport services flights to Pyongyang. Shenyang is the only hub with Air Koryo flights between Pyongyang on Wednesdays.\nPricing includes return flights between Shenyang (SHE) and Pyongyang (FNJ) on Air Koryo. Upgrades to business class are available.",
+          "additional": [
+            "North Korean visa service: €70. We don’t need your physical passport for this process."
+          ],
+          "price_lists": [
+            {
+              "size": "1",
+              "prices": [
+                {
+                  "night": 3,
+                  "price": 1350.00
+                },
+                {
+                  "night": 4,
+                  "price": 1595.00
+                },
+                {
+                  "night": 7,
+                  "price": 2340.00
+                }
+              ]
+            },
+            {
+              "size": "2-5",
+              "prices": [
+                {
+                  "night": 3,
+                  "price": 1195.00
+                },
+                {
+                  "night": 4,
+                  "price": 1395.00
+                },
+                {
+                  "night": 7,
+                  "price": 2035.00
+                }
+              ]
+            },
+            {
+              "size": "6-9",
+              "prices": [
+                {
+                  "night": 3,
+                  "price": 1055.00
+                },
+                {
+                  "night": 4,
+                  "price": 1220.00
+                },
+                {
+                  "night": 7,
+                  "price": 1735.00
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
