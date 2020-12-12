@@ -86,16 +86,12 @@ export default {
      * Fetch fonts on load, filter and sort based on category.
      * - Store in data for ease of reference.
      */
-    this.fonts = await this.getFonts()
-      .then((response) => {
-        return {
-          serif: response.items.filter((item) => item.category === 'serif'),
-          sansSerif: response.items.filter((item) => item.category === 'sans-serif'),
-          monospace: response.items.filter((item) => item.category === 'monospace')
-        }
-      }).catch((error) => {
-        console.log('Could not find fonts', error)
-      })
+    const fonts = await this.getFonts()
+    this.fonts = {
+      serif: fonts.items.filter((item) => item.category === 'serif'),
+      sansSerif: fonts.items.filter((item) => item.category === 'sans-serif'),
+      monospace: fonts.items.filter((item) => item.category === 'monospace')
+    }
   },
 
   methods: {
@@ -147,7 +143,15 @@ export default {
       const randomInt = this.getRandomInt(0, this.fonts[category].length)
       const key = Object.keys(this.fonts[category][randomInt].files)[0]
 
-      return this.fonts[category][randomInt].files[key]
+      return this.sanitizeUrl(this.fonts[category][randomInt].files[key])
+    },
+
+    /**
+     * Sanitise URL request url with https.
+     * @param {string} url - The url string of the font file.
+     */
+    sanitizeUrl(url) {
+      return url.replace(/^http:\/\//i, 'https://')
     }
   }
 }
