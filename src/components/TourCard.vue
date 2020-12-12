@@ -4,8 +4,14 @@
       id: {{ tour.id }}
     </p>
 
-    <h3 class="tour-card__heading serif">{{ tour.name }}</h3>
-    <p class="sans-serif" v-html="tour.body" />
+    <h3 class="tour-card__heading serif">
+      {{ tour.name }}
+    </h3>
+
+    <p
+      class="sans-serif"
+      v-html="tour.body"
+    />
 
     <div class="tour-card__table-wrapper">
       <table class="tour-card__table">
@@ -50,8 +56,14 @@
       </table>
     </div>
 
-    <ul class="sans-serif" v-if="tour.additional.length">
-      <li :key="index" v-for="(item, index) in tour.additional">
+    <ul
+      class="sans-serif"
+      v-if="tour.additional.length"
+    >
+      <li
+        :key="index"
+        v-for="(item, index) in tour.additional"
+      >
         {{ item }}
       </li>
     </ul>

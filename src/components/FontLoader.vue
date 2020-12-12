@@ -24,15 +24,15 @@ export default {
   props: {
     monospace: {
       type: String,
-      default: `http://fonts.gstatic.com/s/jetbrainsmono/v1/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPVmUsaaDhw.ttf`
+      default: `http://fonts.gstatic.com/s/firacode/v9/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_GNsFVfxN87gsj0.ttf`
     },
     sansSerif: {
       type: String,
-      default: `http://fonts.gstatic.com/s/actor/v10/wEOzEBbCkc5cO3ekXygtUMIO.ttf`
+      default: `http://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN_r8-VeJoCqeDjg.ttf`
     },
     serif: {
       type: String,
-      default: `http://fonts.gstatic.com/s/dmserifdisplay/v4/-nFnOHM81r4j6k0gjAW3mujVU2B2K_d709jy92k.ttf`
+      default: `http://fonts.gstatic.com/s/buenard/v12/OD5GuM6Cyma8FnnsB4vSjGCWALepwss.ttf`
     }
   }
 }

@@ -1,12 +1,17 @@
 <template>
   <div class="container">
     <header>
-      <h1 class="serif">Pyongyang Tours</h1>
+      <h1 class="serif">
+        Pyongyang Tours
+      </h1>
     </header>
 
     <main>
       <div>
-        <h2 class="serif">{{ content.intro.heading }}</h2>
+        <h2 class="serif">
+          {{ content.intro.heading }}
+        </h2>
+
         <p
           class="sans-serif"
           v-html="content.intro.body"
@@ -14,15 +19,20 @@
       </div>
 
       <div>
-        <h2 class="serif">{{ content.main.heading }}</h2>
+        <h2 class="serif">
+          {{ content.main.heading }}
+        </h2>
+
         <p
           class="sans-serif"
-          v-html="content.main.body.replace(/(\\r)*\\n/g, '<br>')"
+          v-html="content.main.body"
         />
       </div>
 
       <div v-if="content.tours.items.length">
-        <h2 class="serif">{{ content.tours.heading }}</h2>
+        <h2 class="serif">
+          {{ content.tours.heading }}
+        </h2>
 
         <tour-card
           :key="tour.id"
@@ -62,9 +72,9 @@ export default {
   data() {
     return {
       activeFonts: {
-        monospace: 'http://fonts.gstatic.com/s/firacode/v9/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_GNsFVfxN87gsj0.ttf',
-        sansSerif: 'http://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN_r8-VeJoCqeDjg.ttf',
-        serif: 'http://fonts.gstatic.com/s/crimsonpro/v13/q5uUsoa5M_tv7IihmnkabC5XiXCAlXGks1WZ_G18OJE_VNWoyQ.ttf'
+        monospace: '',
+        sansSerif: '',
+        serif: ''
       },
       content: data,
       fonts: null
@@ -72,6 +82,10 @@ export default {
   },
 
   async mounted() {
+    /**
+     * Fetch fonts on load, filter and sort based on category.
+     * - Store in data for ease of reference.
+     */
     this.fonts = await this.getFonts()
       .then((response) => {
         return {
@@ -108,9 +122,9 @@ export default {
      */
     updateFonts() {
       this.activeFonts = {
-        monospace: this.getRandomFileFromCategory('monospace'),
-        sansSerif: this.getRandomFileFromCategory('sansSerif'),
-        serif: this.getRandomFileFromCategory('serif'),
+        monospace: this.getRandomFontFromCategory('monospace'),
+        sansSerif: this.getRandomFontFromCategory('sansSerif'),
+        serif: this.getRandomFontFromCategory('serif'),
       }
     },
 
@@ -129,7 +143,7 @@ export default {
      * Get a random font file from category.
      * @param {string} category - The category key (handlised).
      */
-    getRandomFileFromCategory(category) {
+    getRandomFontFromCategory(category) {
       const randomInt = this.getRandomInt(0, this.fonts[category].length)
       const key = Object.keys(this.fonts[category][randomInt].files)[0]
 
