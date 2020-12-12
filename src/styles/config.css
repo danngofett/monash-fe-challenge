@@ -1,0 +1,18 @@
+:root {
+  --color_primary: #2c3e50;
+  --color_secondary: #07203a;
+  --color_border: #d6d6d6;
+  --color_white: #ffffff;
+
+  --spacing_s: 1rem;
+  --spacing_m: 2rem;
+  --spacing_l: 3rem;
+
+  --layout_s: 6rem;
+  --layout_m: 9rem;
+  --layout-l: 12rem;
+
+  --grid_gutter_s: 15px;
+  --grid_gutter_m: 20px;
+  --grid_gutter_l: 30px;
+}
