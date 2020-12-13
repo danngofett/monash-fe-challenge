@@ -131,13 +131,13 @@ export default {
       this.activeFonts = {
         monospace: this.getRandomFontFromCategory('monospace'),
         sansSerif: this.getRandomFontFromCategory('sansSerif'),
-        serif: this.getRandomFontFromCategory('serif'),
+        serif: this.getRandomFontFromCategory('serif')
       }
 
       // Simulating a fake loader based on completed request of new fonts loading in.
       setTimeout(() => {
         this.loading = false
-      }, 1000);
+      }, 1000)
     },
 
     /**
