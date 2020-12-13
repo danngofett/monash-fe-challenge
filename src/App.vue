@@ -1,5 +1,9 @@
 <template>
   <div class="container">
+    <transition name="fade">
+      <loader v-if="loading" />
+    </transition>
+
     <header>
       <h1 class="serif">
         Pyongyang Tours
@@ -42,12 +46,12 @@
       </div>
     </main>
 
-    <button
-      class="button is-floating"
+    <btn
+      :is-disabled="loading"
+      :label="loading ? 'Updating...' : 'Generate'"
       @click="updateFonts()"
-    >
-      Generate
-    </button>
+      is-floating
+    />
 
     <font-loader
       :monospace="activeFonts.monospace"
@@ -60,23 +64,28 @@
 <script>
 import { data } from '@/assets/data/content.json'
 
+import Btn from './components/Button'
 import FontLoader from './components/FontLoader'
+import Loader from './components/Loader'
 import TourCard from './components/TourCard'
 
 export default {
   components: {
+    Btn,
     FontLoader,
+    Loader,
     TourCard
   },
 
   data() {
     return {
       activeFonts: {
-        monospace: '',
-        sansSerif: '',
-        serif: ''
+        monospace: 'https://fonts.gstatic.com/s/firacode/v9/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_GNsFVfxN87gsj0.ttf',
+        sansSerif: 'https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN_r8-VeJoCqeDjg.ttf',
+        serif: 'https://fonts.gstatic.com/s/vesperlibre/v13/bx6dNxyWnf-uxPdXDHUD_RdA-2ap0okKXKvPlw.ttf'
       },
       content: data,
+      loading: false,
       fonts: null
     }
   },
@@ -117,11 +126,18 @@ export default {
      * Use fonts stored in data, and replace in embedded scripts.
      */
     updateFonts() {
+      this.loading = true
+
       this.activeFonts = {
         monospace: this.getRandomFontFromCategory('monospace'),
         sansSerif: this.getRandomFontFromCategory('sansSerif'),
         serif: this.getRandomFontFromCategory('serif'),
       }
+
+      // Simulating a fake loader based on completed request of new fonts loading in.
+      setTimeout(() => {
+        this.loading = false
+      }, 1000);
     },
 
     /**

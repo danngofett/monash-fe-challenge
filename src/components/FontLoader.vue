@@ -32,7 +32,7 @@ export default {
     },
     serif: {
       type: String,
-      default: `https://fonts.gstatic.com/s/buenard/v12/OD5GuM6Cyma8FnnsB4vSjGCWALepwss.ttf`
+      default: `https://fonts.gstatic.com/s/vesperlibre/v13/bx6dNxyWnf-uxPdXDHUD_RdA-2ap0okKXKvPlw.ttf`
     }
   }
 }

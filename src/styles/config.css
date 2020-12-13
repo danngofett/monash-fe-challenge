@@ -2,8 +2,10 @@
   --color_primary: #2c3e50;
   --color_secondary: #07203a;
   --color_border: #d6d6d6;
+  --color_grey: #ececec;
   --color_white: #ffffff;
 
+  --spacing_s: 1rem;
   --spacing_s: 1rem;
   --spacing_m: 2rem;
   --spacing_l: 3rem;
