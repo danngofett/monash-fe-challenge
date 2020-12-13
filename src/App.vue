@@ -6,7 +6,7 @@
 
     <header>
       <h1 class="serif">
-        Pyongyang Tours
+        {{ content.title }}
       </h1>
     </header>
 

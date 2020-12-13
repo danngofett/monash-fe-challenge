@@ -1,0 +1,43 @@
+.sans-serif {
+  font-family: "MonashSans", sans-serif;
+}
+
+.serif {
+  font-family: "MonashSerif", serif;
+}
+
+.monospace {
+  font-family: "MonashMono", monospace;
+}
+
+h1,
+.h1 {
+  font-size: 42px;
+  line-height: 48px;
+}
+
+h2,
+.h2 {
+  font-size: 30px;
+  margin-top: var(--spacing_l);
+  line-height: 32px;
+}
+
+h3,
+.h3 {
+  font-size: 26px;
+}
+
+h4,
+.h4 {
+  font-size: 21px;
+}
+
+p.lead {
+  font-size: 19px;
+  line-height: 1.5;
+}
+
+p {
+  font-size: 16px;
+}

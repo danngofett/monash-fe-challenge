@@ -6,33 +6,13 @@
       @click="updateFonts()"
       is-floating
     />
-
-    <component :is="`style`">
-      @font-face {
-        font-family: 'SansSerif';
-        src: url({{ activeFonts.sansSerif.file }})
-      }
-
-      @font-face {
-        font-family: 'Serif';
-        src: url({{ activeFonts.serif.file }})
-      }
-
-      @font-face {
-        font-family: 'Monospace';
-        src: url({{ activeFonts.monospace.file }})
-      }
-    </component>
   </div>
 </template>
 
 <script>
-import Btn from './Button'
-import FontFaceObserver from 'fontfaceobserver'
+import { getRandomInt, sanitizeUrl } from '@/scripts/utils'
 
-const sansSerifFont = new FontFaceObserver('SansSerif')
-const serifFont = new FontFaceObserver('Serif')
-const monospaceFont = new FontFaceObserver('Monospace')
+import Btn from './Button'
 
 export default {
   components: {
@@ -41,20 +21,6 @@ export default {
 
   data() {
     return {
-      activeFonts: {
-        monospace: {
-          file: 'https://fonts.gstatic.com/s/firacode/v9/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_GNsFVfxN87gsj0.ttf',
-          family: 'Fira Code'
-        },
-        sansSerif: {
-          file: 'https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN_r8-VeJoCqeDjg.ttf',
-          family: 'Open Sans'
-        },
-        serif: {
-          file: 'https://fonts.gstatic.com/s/vesperlibre/v13/bx6dNxyWnf-uxPdXDHUD_RdA-2ap0okKXKvPlw.ttf',
-          family: 'Vesper Libre'
-        }
-      },
       fonts: null,
       loading: false
     }
@@ -99,33 +65,35 @@ export default {
       this.$emit('updating')
       this.loading = true
 
-      this.activeFonts = {
+      const newFonts = {
         monospace: this.getRandomFontFromCategory('monospace'),
         sansSerif: this.getRandomFontFromCategory('sansSerif'),
         serif: this.getRandomFontFromCategory('serif')
       }
 
-      Promise.all([
-        sansSerifFont.load(),
-        serifFont.load(),
-        monospaceFont.load()
-      ]).then(() => {
-        setTimeout(() => {
-          this.$emit('updated')
-          this.loading = false
-        }, 1000)
-      })
-    },
+      const monoFont = new FontFace('MonashMono', `url(${newFonts.monospace.file})`)
+      const sansFont = new FontFace('MonashSans', `url(${newFonts.sansSerif.file})`)
+      const serifFont = new FontFace('MonashSerif', `url(${newFonts.serif.file})`)
 
-    /**
-     * Get a random number between two ranges.
-     * @param {integer} min - Min limit threshold.
-     * @param {integer} max - Max limit threshold.
-     */
-    getRandomInt(min, max) {
-      min = Math.ceil(min)
-      max = Math.floor(max)
-      return Math.floor(Math.random() * (max - min) + min)
+      Promise.all([
+        monoFont.load(),
+        sansFont.load(),
+        serifFont.load()
+      ])
+        .then(() => {
+          document.fonts.add(monoFont)
+          document.fonts.add(sansFont)
+          document.fonts.add(serifFont)
+        })
+        .catch((err) => {
+          console.log('Could not update fonts', err)
+        })
+        .finally(() => {
+          setTimeout(() => {
+            this.$emit('updated')
+            this.loading = false
+          }, 500);
+        })
     },
 
     /**
@@ -133,22 +101,14 @@ export default {
      * @param {string} category - The category key (handlised).
      */
     getRandomFontFromCategory(category) {
-      const randomInt = this.getRandomInt(0, this.fonts[category].length)
+      const randomInt = getRandomInt(0, this.fonts[category].length)
       const key = Object.keys(this.fonts[category][randomInt].files)[0]
 
       return {
         family: this.fonts[category][randomInt].family,
-        file: this.sanitizeUrl(this.fonts[category][randomInt].files[key])
+        file: sanitizeUrl(this.fonts[category][randomInt].files[key])
       }
     },
-
-    /**
-     * Sanitise URL request url with https.
-     * @param {string} url - The url string of the font file.
-     */
-    sanitizeUrl(url) {
-      return url.replace(/^http:\/\//i, 'https://')
-    }
   }
 }
 </script>

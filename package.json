@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "fontfaceobserver": "^2.1.0",
     "json-loader": "^0.5.7",
     "sass": "^1.30.0",
     "sass-loader": "^10.1.0",
